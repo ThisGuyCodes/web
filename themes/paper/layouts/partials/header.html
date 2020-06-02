@@ -15,12 +15,12 @@
     <meta name="author" content="{{ .Site.Params.author }}">
     {{- end }}
     <!-- Styles -->
-    <link href="{{ "an-old-hope.min.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "style.css" | absURL }}" rel="stylesheet">
-    <link href="{{ "custom.css" | absURL }}" rel="stylesheet">
+    <link href="{{ "an-old-hope.min.css" | relURL }}" rel="stylesheet">
+    <link href="{{ "style.css" | relURL }}" rel="stylesheet">
+    <link href="{{ "custom.css" | relURL }}" rel="stylesheet">
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
-    <link rel="icon" href="{{ "favicon.ico" | absURL }}">
+    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}">
     <!-- Generator -->
     {{- hugo.Generator }}
     <!-- RSS -->
@@ -84,9 +84,9 @@
     <header class="header">
       <nav class="nav">
         {{- if .IsHome }}
-        <h1 class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></h1>
+        <h1 class="logo"><a href="{{ "" | relURL }}">{{ .Site.Title }}</a></h1>
         {{- else }}
-        <p class="logo"><a href="{{ "" | absURL }}">{{ .Site.Title }}</a></p>
+        <p class="logo"><a href="{{ "" | relURL }}">{{ .Site.Title }}</a></p>
         {{- end }}
         {{- if .Site.Menus.main }}
         <ul class="menu">

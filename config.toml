@@ -1,3 +1,19 @@
-baseURL = "http://example.org/"
+baseURL = "https://thisguy.codes/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "ThisGuy"
+description = "ThisGuy Codes"
+theme = "paper"
+
+enableGitInfo = true
+googleAnalytics = "UA-55201469-1"
+
+[markup.highlight]
+codeFences = true
+guessSyntax = true
+style = "monokai"
+noClasses = true
+tabWidth = 4
+lineNoStart = 1
+lineNumbersInTable = true
+lineNos = true
+hl_Lines = ""
