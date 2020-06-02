@@ -5,6 +5,8 @@ description = "ThisGuy Codes"
 theme = "paper"
 disqusShortname = "thisguycodes"
 
+sectionPagesMenu = "main"
+
 enableGitInfo = true
 googleAnalytics = "UA-55201469-1"
 
