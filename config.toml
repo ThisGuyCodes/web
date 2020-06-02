@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "ThisGuy"
 description = "ThisGuy Codes"
 theme = "paper"
+disqusShortname = "thisguycodes"
 
 enableGitInfo = true
 googleAnalytics = "UA-55201469-1"
