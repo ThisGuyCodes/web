@@ -6,7 +6,10 @@
   <span>&middot;</span>
   <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
 </footer>
-<script src="{{ "highlight.min.js" | relURL }}"></script>
+{{- with resources.Get "highlight.min.js" | resources.Minify }}
+{{- $int := . | resources.Fingerprint }}
+<script src="{{.RelPermalink}}" integrity="{{$int.Data.Integrity}}"></script>
+{{- end }}
 <script>
   hljs.initHighlightingOnLoad();
 </script>

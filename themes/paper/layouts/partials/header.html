@@ -15,12 +15,20 @@
     <meta name="author" content="{{ .Site.Params.author }}">
     {{- end }}
     <!-- Styles -->
-    <link href="{{ "an-old-hope.min.css" | relURL }}" rel="stylesheet">
-    <link href="{{ "style.css" | relURL }}" rel="stylesheet">
-    <link href="{{ "custom.css" | relURL }}" rel="stylesheet">
+    {{- range slice "an-old-hope.min.css" "style.css" "custom.css" }}
+    {{- $res := resources.Get . | resources.Minify }}
+    {{- $int := $res | resources.Fingerprint }}
+        <link rel="stylesheet" href="{{$res.RelPermalink}}" integrity="{{$int.Data.Integrity}}">
+    {{- end }}
     <!-- Favicons -->
-    <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | relURL }}">
-    <link rel="icon" href="{{ "favicon.ico" | relURL }}">
+    {{- with resources.Get "apple-touch-icon.png" }}
+    {{- $int := . | resources.Fingerprint }}
+        <link rel="icon" href="{{.RelPermalink}}" integrity="{{$int.Data.Integrity}}">
+    {{- end }}
+    {{- with resources.Get "favicon.ico" }}
+    {{- $int := . | resources.Fingerprint }}
+        <link rel="icon" href="{{.RelPermalink}}" integrity="{{$int.Data.Integrity}}">
+    {{- end }}
     <!-- Generator -->
     {{- hugo.Generator }}
     <!-- RSS -->
