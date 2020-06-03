@@ -5,6 +5,8 @@
   <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
   <span>&middot;</span>
   <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+  <br>
+  <span>Page last updated {{ dateFormat "Jan 2, 2006" .Page.Lastmod}}</span>
 </footer>
 {{- with resources.Get "highlight.min.js" | resources.Minify }}
 {{- $int := . | resources.Fingerprint }}
