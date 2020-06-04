@@ -8,6 +8,9 @@ disqusShortname = "thisguycodes"
 enableGitInfo = true
 googleAnalytics = "UA-55201469-1"
 
+[params]
+author = "Travis Johnson"
+
 [markup.highlight]
 codeFences = true
 guessSyntax = true
