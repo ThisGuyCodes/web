@@ -8,12 +8,5 @@
   <br>
   <span>Page last updated {{ dateFormat "Jan 2, 2006" .Page.Lastmod}}</span>
 </footer>
-{{- with resources.Get "highlight.min.js" | resources.Minify }}
-{{- $int := . | resources.Fingerprint }}
-<script src="{{.RelPermalink}}" integrity="{{$int.Data.Integrity}}"></script>
-{{- end }}
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
 </body>
 </html>
