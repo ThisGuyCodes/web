@@ -1,5 +1,7 @@
 {{- $target := "" }}
-{{- if $blank := strings.HasPrefix .Destination "http" }}
+{{- if strings.HasPrefix .Destination "http" }}
+    {{- $target = printf " target=%q " "_blank" | safeHTMLAttr }}
+{{- else if strings.HasPrefix .Destination "mailto:" }}
     {{- $target = printf " target=%q " "_blank" | safeHTMLAttr }}
 {{- end }}
 
