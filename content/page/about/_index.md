@@ -7,6 +7,8 @@ menu:
     weight: 2
 ---
 
+Travis Johnson
+
 [Resume](https://resume.thisguy.codes/)
 
 [LinkedIn](https://www.linkedin.com/in/thisguycodes/)

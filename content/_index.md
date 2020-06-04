@@ -7,6 +7,8 @@ menu:
     weight: 1
 ---
 
+Hi! I'm Travis.
+
 I'm an SRE[^sre]. I think a lot about DX[^dx], D&I[^di], growth, and mentoring.
 
 In a talk whos title and speaker I forget[^help] (something about SDN[^sdn] development) it was said "software problems aren't real problems", this was to say when problems exist in software you always have the option to crack it open and fix it yourself (should you be willing to make the investment); this was in contrast to hardware where the investment required to "crack it open" is often beyond the capabilities (let alone desire) of an organizaion.
