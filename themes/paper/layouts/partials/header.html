@@ -16,18 +16,15 @@
     {{- end }}
     <!-- Styles -->
     {{- range slice "an-old-hope.min.css" "style.css" "custom.css" }}
-        {{- $res := resources.Get . | resources.Minify }}
-        {{- $int := $res | resources.Fingerprint }}
-	{{ printf `<link rel="stylesheet" href=%q integrity=%q />` $res.RelPermalink $int.Data.Integrity | safeHTML }}
+    {{- $res := resources.Get . | resources.Minify | resources.Fingerprint }}
+	  {{ printf `<link rel="stylesheet" href=%q integrity=%q />` $res.RelPermalink $res.Data.Integrity | safeHTML }}
     {{- end }}
     <!-- Favicons -->
-    {{- with resources.Get "apple-touch-icon.png" }}
-        {{- $int := . | resources.Fingerprint }}
-	{{ printf `<link rel="apple-touch-icon" href=%q integrity=%q />` .RelPermalink $int.Data.Integrity | safeHTML }}
+    {{- with resources.Get "apple-touch-icon.png" | resources.Fingerprint }}
+	  {{ printf `<link rel="apple-touch-icon" href=%q integrity=%q />` .RelPermalink .Data.Integrity | safeHTML }}
     {{- end }}
-    {{- with resources.Get "favicon.ico" }}
-        {{- $int := . | resources.Fingerprint }}
-	{{ printf `<link rel="icon" href=%q integrity=%q />` .RelPermalink $int.Data.Integrity | safeHTML }}
+    {{- with resources.Get "favicon.ico" | resources.Fingerprint }}
+	  {{ printf `<link rel="icon" href=%q integrity=%q />` .RelPermalink .Data.Integrity | safeHTML }}
     {{- end }}
     <!-- Generator -->
     {{- hugo.Generator }}
