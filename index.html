@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Home - ThisGuy</title>
+    
+    <meta name="description" content="">
+    <meta name="author" content="Travis Johnson">
+    
+	  <link rel="stylesheet" href="/an-old-hope.min.min.5d74c2dc9415078ef1821d69a371ad8d7f140fa8d5c85f8e5ffa4b1febcdebed.css" integrity="sha256-XXTC3JQVB47xgh1po3GtjX8UD6jVyF+OX/pLH+vN6+0=" />
+	  <link rel="stylesheet" href="/style.min.a6b83f4982b77269c27a27fd361224db33e57daa35e581a38c61fb97ea19c78b.css" integrity="sha256-prg/SYK3cmnCeif9NhIk2zPlfao15YGjjGH7l+oZx4s=" />
+	  <link rel="stylesheet" href="/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=" />
+    
+	  <link rel="apple-touch-icon" href="/apple-touch-icon.ebbcb430cee4109af975c284c6493e3fd6f58475948845b654c1854ced139f92.png" integrity="sha256-67y0MM7kEJr5dcKExkk+P9b1hHWUiEW2VMGFTO0Tn5I=" />
+	  <link rel="icon" href="/favicon.4bc1976ee32726154cc37b1cba89178482ada96c037d5961e406fe92be186e56.ico" integrity="sha256-S8GXbuMnJhVMw3scuokXhIKtqWwDfVlh5Ab+kr4YblY=" />
+    <meta name="generator" content="Hugo 0.72.0" />
+    
+    <link rel="alternate" type="application/rss+xml" href="https://thisguy.codes/index.xml" title="ThisGuy" />
+    
+    
+    <script>
+      function setTheme() {
+        const time = new Date();
+
+        const prev = localStorage.getItem('date');
+        const date = String(time.getMonth() + 1) + '.' + String(time.getDate());
+
+        const now = time.getTime();
+        let sunrise;
+        let sunset;
+
+        function setBodyClass() {
+          if (now > sunrise && now < sunset) return;
+          document.body.classList.add('dark');
+        }
+
+        if (date !== prev) {
+          fetch('https://api.ipgeolocation.io/astronomy?apiKey=5ed37d85103e4defa5df4c5298ed5215')
+            .then(res => res.json())
+            .then(data => {
+              sunrise = data.sunrise.split(':').map(Number);
+              sunset = data.sunset.split(':').map(Number);
+            })
+            .catch(() => {
+              sunrise = [7, 0];
+              sunset = [19, 0];
+            })
+            .finally(() => {
+              sunrise = time.setHours(sunrise[0], sunrise[1], 0);
+              sunset = time.setHours(sunset[0], sunset[1], 0);
+              setBodyClass();
+              localStorage.setItem('sunrise', sunrise);
+              localStorage.setItem('sunset', sunset);
+            });
+          localStorage.setItem('date', date);
+        } else {
+          sunrise = Number(localStorage.getItem('sunrise'));
+          sunset = Number(localStorage.getItem('sunset'));
+          setBodyClass();
+        }
+      }
+    </script>
+  </head>
+  <body class="list home">
+    <script>
+      setTheme();
+    </script>
+    <header class="header">
+      <nav class="nav">
+        <h1 class="logo"><a href="/">ThisGuy</a></h1>
+        <ul class="menu">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/page/about/">About</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+
+<header class="page-header"><h1>Home</h1></header>
+
+<div class="post-content"><p>I&rsquo;m an SRE<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. I think a lot about DX<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, D&amp;I<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, growth, and mentoring.</p>
+<p>In a talk whos title and speaker I forget<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> (something about SDN<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> development) it was said &ldquo;software problems aren&rsquo;t real problems&rdquo;, this was to say when problems exist in software you always have the option to crack it open and fix it yourself (should you be willing to make the investment); this was in contrast to hardware where the investment required to &ldquo;crack it open&rdquo; is often beyond the capabilities (let alone desire) of an organizaion.</p>
+<p>I entirely agree with this. Though I encourage you to think carefully about if your problem is even technical to begin with; tech can assist and smooth over non-technical solutions, but it shouldn&rsquo;t be the solution itself.</p>
+<p>Many technical problems come about from trying to solve people problems with tech.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://landing.google.com/sre/" title="" target="_blank" >Site Reliability Engineer</a> (note: I have not worked at Google) <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>Developer Experience; like &ldquo;how much do I have to remember to see my logs in Kubernetes&rdquo;. <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Diversity and Inclusion. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>If you know what talk this is, please <a href="mailto:travis@thisguy.codes" title="" target="_blank" >let me know</a>! <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>Software Defined Networking; let&rsquo;s you control the flow of packets in a network much more dynamically. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div></main>
+<footer class="footer">
+  <span>&copy; 2020 <a href="/">Travis Johnson</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+  <br>
+  <span>Page last updated Jun 4, 2020</span>
+</footer>
+</body>
+</html>
+
