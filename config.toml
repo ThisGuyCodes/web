@@ -10,6 +10,8 @@ googleAnalytics = "UA-55201469-1"
 
 [params]
 author = "Travis Johnson"
+gtm_id = "GTM-PS8GQ4Z"
+gtm_datalayer = "basic"
 
 [markup.highlight]
 codeFences = true
