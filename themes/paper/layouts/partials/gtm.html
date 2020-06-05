@@ -1,6 +1,7 @@
 {{- if not (in (.Site.BaseURL | string) "localdost") }}
 {{- if .Site.Params.gtm_id}}
-  <link rel="preload" as="script" href="https://www.googletagmanager.com/gtm.js?id={{.Site.Params.gtm_id}}" >
+  <link rel="preload" as="script" href="https://www.googletagmanager.com/gtm.js?id={{.Site.Params.gtm_id}}" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
 {{- end }}
 {{- if eq .Site.Params.gtm_datalayer "basic"}}
 	<script>
