@@ -5,4 +5,4 @@
     {{- $target = printf " target=%q " "_blank" | safeHTMLAttr }}
 {{- end }}
 
-{{- printf `<a href=%q title=%q%s>%s</a>` (.Destination | safeURL) .Title $target .Text | safeHTML -}}
+{{- printf `<a href=%q title=%q rel="noopener" %s>%s</a>` (.Destination | safeURL) .Title $target .Text | safeHTML -}}
