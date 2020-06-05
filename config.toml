@@ -13,6 +13,7 @@ author = "Travis Johnson"
 description = "ThisGuy Codes"
 gtm_id = "GTM-PS8GQ4Z"
 gtm_datalayer = "basic"
+adsense_id="ca-pub-1086024914341524"
 
 [markup.highlight]
 codeFences = true
