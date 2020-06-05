@@ -8,11 +8,14 @@
     <title>{{ if .Title }}{{ .Title }} - {{ end }}{{ .Site.Title }}</title>
     <!-- Meta -->
     {{- if eq .Kind "page" }}
-    <meta name="description" content="{{ .Summary }}">
     <meta name="author" content="{{ .Params.author | default .Site.Params.author }}">
     {{- else }}
-    <meta name="description" content="{{ .Site.Params.description }}">
     <meta name="author" content="{{ .Site.Params.author }}">
+    {{- end }}
+    {{- if gt (len .Summary) 5 }}
+    <meta name="description" content="{{ .Summary }}">
+    {{- else }}
+    <meta name="description" content="{{ .Site.Params.description }}">
     {{- end }}
     <!-- Styles -->
     {{- range slice "an-old-hope.min.css" "style.css" "custom.css" }}

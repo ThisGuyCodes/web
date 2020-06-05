@@ -1,6 +1,5 @@
 ---
 title: "Home"
-summary: "Home"
 date: 2020-06-03T17:18:08-04:00
 draft: false
 menu:

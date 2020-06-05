@@ -1,6 +1,5 @@
 ---
 title: "About"
-summary: "About Me"
 date: 2020-06-03T11:28:19-04:00
 draft: false
 menu:
